@@ -43,4 +43,11 @@ public class EmployeeController {
         EmployeeDto employeeDto = employeeService.updateEmployee(employeeId,updatedEmployee);
         return ResponseEntity.ok(employeeDto);
     }
+
+    //Delete Employee REST API
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteEmployeeById(@PathVariable("id") Long employeeId){
+        employeeService.deleteEmployee(employeeId);
+        return ResponseEntity.ok("Employee deleted successfully...");
+    }
 }
